@@ -3,8 +3,8 @@ FROM php:5.6-fpm
 MAINTAINER Aklis <aklis@qq.com>
 #The php container is only to execute php script
 
-COPY fpm/* /usr/local/etc/php-fpm.conf
-COPY php/* /usr/local/etc/php/conf.d/php.ini
+COPY fpm/* /usr/local/etc/
+COPY php/* /usr/local/etc/php/conf.d/
 
 RUN apt-get update && apt-get install -y wget libmemcached-dev libssl-dev libpng12-dev libjpeg-dev re2c libfreetype6-dev libmcrypt-dev libxml2-dev libpq-dev --no-install-recommends && rm -r /var/lib/apt/lists/*
 RUN wget https://pecl.php.net/get/redis-2.2.7.tgz -O /tmp/redis.tgz
