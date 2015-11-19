@@ -6,8 +6,7 @@ MAINTAINER Aklis <aklis@qq.com>
 COPY fpm/* /usr/local/etc/php-fpm.conf
 COPY php/* /usr/local/etc/php/conf.d/php.ini
 
-# Add the support of redis and composer
-RUN apt-get update && apt-get install -y libmemcached-dev libssl-dev libpng12-dev libjpeg-dev re2c libfreetype6-dev libmcrypt-dev libxml2-dev libpq-dev --no-install-recommends && rm -r /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget libmemcached-dev libssl-dev libpng12-dev libjpeg-dev re2c libfreetype6-dev libmcrypt-dev libxml2-dev libpq-dev --no-install-recommends && rm -r /var/lib/apt/lists/*
 RUN wget https://pecl.php.net/get/redis-2.2.7.tgz -O /tmp/redis.tgz
 
 # Maybe you need the follows
